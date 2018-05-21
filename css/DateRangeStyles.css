@@ -1,0 +1,82 @@
+.StartDateHolder
+{
+    float: left;
+    display: flex;
+    flex-direction: column;
+}
+.EndDateHolder
+{
+    float: left;
+    display: flex;
+    flex-direction: column;
+}
+.DateRangeComponentHolder
+{
+    display: flex;
+    flex-direction: row;
+}
+
+#calendarHolder
+{
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    width: 10.5em;
+}
+
+#calendarHeader
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#calendarBody
+{
+    display: flex;
+    flex-direction: column;
+}
+
+#daysCaptions
+{
+    display: flex;
+    flex-direction: row;
+}
+
+#weeksHolder
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.week
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.day
+{
+    width: 1.5em;
+}
+.day:hover
+{
+    font-weight: bold;
+    cursor: default;
+    border: dashed;
+    border-style: dashed;
+}
+.dayCaption
+{
+    width: 1.5em;
+}
+#rightArrow:hover
+{
+    font-weight: bold;
+    cursor: default;
+}
+#leftArrow:hover
+{
+    font-weight: bold;
+    cursor: default;
+}

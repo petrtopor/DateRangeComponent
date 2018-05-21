@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/calendarElementStyle.css">
+</head>
+<body>
+    <div id="calendarHolder">
+        <div id="calendarHeader">
+            <div id="leftArrow">
+                &larr;
+            </div>
+            <div id="headerContent">
+                календарь
+            </div>
+            <div id="rightArrow">
+                &rarr;
+            </div>
+        </div>
+        <div id="calendarBody">
+            <div id="daysCaptions">
+                <div class="dayCaption">
+                    Пн
+                </div>
+                <div class="dayCaption">
+                    Вт
+                </div>
+                <div class="dayCaption">
+                    Ср
+                </div>
+                <div class="dayCaption">
+                    Чт
+                </div>
+                <div class="dayCaption">
+                    Пт
+                </div>
+                <div class="dayCaption">
+                    Сб
+                </div>
+                <div class="dayCaption">
+                    Вс
+                </div>
+            </div>
+            <div id="weeksHolder">
+                <div class="week">
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        2
+                    </div>
+                    <div class="day">
+                        3
+                    </div>
+                    <div class="day">
+                        4
+                    </div>
+                    <div class="day">
+                        5
+                    </div>
+                    <div class="day">
+                        6
+                    </div>
+                    <div class="day">
+                        7
+                    </div>
+                </div>
+
+                <div class="week">
+                    <div class="day">
+                        8
+                    </div>
+                    <div class="day">
+                        9
+                    </div>
+                    <div class="day">
+                        10
+                    </div>
+                    <div class="day">
+                        11
+                    </div>
+                    <div class="day">
+                        12
+                    </div>
+                    <div class="day">
+                        13
+                    </div>
+                    <div class="day">
+                        14
+                    </div>
+                </div>
+
+                <div class="week">
+                    <div class="day">
+                        15
+                    </div>
+                    <div class="day">
+                        16
+                    </div>
+                    <div class="day">
+                        17
+                    </div>
+                    <div class="day">
+                        18
+                    </div>
+                    <div class="day">
+                        19
+                    </div>
+                    <div class="day">
+                        20
+                    </div>
+                    <div class="day">
+                        21
+                    </div>
+                </div>
+
+                <div class="week">
+                    <div class="day">
+                        22
+                    </div>
+                    <div class="day">
+                        23
+                    </div>
+                    <div class="day">
+                        24
+                    </div>
+                    <div class="day">
+                        25
+                    </div>
+                    <div class="day">
+                        26
+                    </div>
+                    <div class="day">
+                        27
+                    </div>
+                    <div class="day">
+                        28
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var today = new Date();
+        var daysNames = ['Пн','Вт','Ср','Чт','Пт','Сб', 'Вс'];
+        var monthsNames = ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
+
+        var daysInMonth = function(date)
+        {
+            return new Date(date.getFullYear(), date.getMonth()+1, 0).getDate();
+        };
+
+        var dayOfTheWeekIndex = function(date)
+        {
+            return date.getDay() > 0 ? date.getDay() - 1 : date.getDay() + 6;
+        };
+
+        var dayName = function(date)
+        {
+            return daysNames[dayOfTheWeekIndex(date)];
+        };
+
+        var weeksInMonth = function(date)
+        {
+            return Math.ceil((daysInMonth(date) + dayOfTheWeekIndex(date))/7);
+        };
+
+        document.getElementById("headerContent").innerHTML = monthsNames[today.getMonth()] + " (" + daysInMonth(today) + " дней)";
+
+        alert(weeksInMonth(today));
+
+
+    </script>
+</body>
+</html>
